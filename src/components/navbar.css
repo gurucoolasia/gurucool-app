@@ -11,6 +11,7 @@
     position: relative;
     justify-content: center;
     box-shadow: 0 0px 6px 0 rgb(32 33 36 / 28%);
+
 }
 
 .logo-space{
@@ -22,8 +23,9 @@
 .nav-list {
     align-items: center;
     margin: 0px;
-    position: relative;
+    height: 74px;
     width: 1993px;
+    overflow-y: hidden;
 }
 
 .logout-space{
@@ -52,12 +54,53 @@ li, a {
 
 .nav-item-list li {
     display: inline-block;
-    padding: 27px 21px;
-    margin: -4px;
+    padding: 30px 21px;
+    margin: 0px;
 }
 
 .nav-item-list li:hover{
     background-color: #f4f4f7;
 }
 
+.toggle-collapse{
+    cursor: pointer;
+    visibility: hidden;
+}
 
+
+
+@media only screen and (max-width: 800px){
+    .nav-item-list{
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+    }
+    .nav-list.collapse{
+        height: 368px;
+    }
+    
+    .nav-item-list {
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        margin: 48px 0px 0px 0px;
+    }
+
+.logo-space {
+    align-items: center;
+    width: 140px;
+    height: 74px;
+    margin-bottom: auto;
+}
+
+.logout-space {
+    align-items: center;
+    width: 140px;
+    height: 74px;
+    margin-bottom: auto;
+}
+
+.toggle-collapse{
+    visibility: visible;
+}
+}
