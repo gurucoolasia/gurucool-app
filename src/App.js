@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Login from "./Components/Login";
-import Nav from "./Components/Nav";
+import Home from "./Components/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./Components/Login.css";
 import GuardedRoute from "./Components/GuardedRoute";
@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/" component={Login}>
             <Login />
           </Route>
-          <GuardedRoute path="/nav" component={Nav}>
+          <GuardedRoute path="/home" component={Home}>
             {/* <Nav /> */}
           </GuardedRoute>
         </Switch>
