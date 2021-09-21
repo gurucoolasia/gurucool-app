@@ -12,7 +12,7 @@ function Login() {
   const onLoginSuccess = (res) => {
     console.log("Login Success:", res.profileObj);
     authentication.onAuthentication();
-    history.push("/home");
+    history.push("/landing");
   };
 
   const onLoginFailure = (res) => {
