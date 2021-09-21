@@ -5,9 +5,9 @@ import { clientId } from "./Login";
 import { Nav, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Home.css"
+import "./Nav.css";
 
-function Home() {
+function Nav1() {
   const style = {
     padding: "5px",
   };
@@ -49,7 +49,7 @@ function Home() {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" >
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Navbar.Brand href="#home">
             {/* <img
             src="favicon.png"
@@ -58,15 +58,11 @@ function Home() {
             className="d-inline-block align-top"
             alt="React Bootstrap logo"
           /> */}
-           GC
+            GC
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#features">
-              {/* Features */}
-              </Nav.Link>
-            <Nav.Link href="#pricing">
-              {/* Pricing */}
-              </Nav.Link>
+            <Nav.Link href="#features">{/* Features */}</Nav.Link>
+            <Nav.Link href="#pricing">{/* Pricing */}</Nav.Link>
             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -82,7 +78,11 @@ function Home() {
           <Nav>
             <GoogleLogout
               clientId={clientId}
-              render={renderProps=>(<button onClick={renderProps.onClick} style={bstyle}>Sign Out</button>)}
+              render={(renderProps) => (
+                <button onClick={renderProps.onClick} style={bstyle}>
+                  Sign Out
+                </button>
+              )}
               buttonText="Sign Out"
               onLogoutSuccess={onSignoutSuccess}
               icon={false}
@@ -95,4 +95,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Nav1;
