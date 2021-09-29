@@ -6,6 +6,12 @@ import { Nav, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Nav.css";
+import Avatar from '@material-ui/core/Avatar' //new add
+import { Menu, MenuItem  } from "@material-ui/core"; //new add
+// import PersonIcon from '@mui/icons-material/Person';
+import { useState } from "react";
+
+
 
 function Nav1() {
   const style = {
@@ -22,6 +28,16 @@ function Nav1() {
   };
 
   const history = useHistory();
+
+  const[open,setOpen]=useState(null);// new add
+
+  const handleOpen= (event) =>{
+    setOpen(event.currentTarget); // new add
+  };
+
+  const handleClose=()=>{
+    setOpen(false);
+  };
 
   const onSignoutSuccess = () => {
     alert("You have been logged out successfully");
@@ -76,21 +92,34 @@ function Nav1() {
             </NavDropdown> */}
           </Nav>
           <Nav>
-            <GoogleLogout
-              clientId={clientId}
-              render={(renderProps) => (
-                <button onClick={renderProps.onClick} style={bstyle}>
-                  Sign Out
-                </button>
-              )}
-              buttonText="Sign Out"
-              onLogoutSuccess={onSignoutSuccess}
-              icon={false}
-            ></GoogleLogout>
+
+          <Avatar  onClick={handleOpen}  className="avt" src="/account.png" />
+          {/* <PersonIcon onclick={handleOpen}  className="avt"/> */}
+         
           </Nav>
         </Navbar.Collapse>
         {/* </Container> */}
       </Navbar>
+
+      <Menu id='menu' onClose={handleClose} anchorEl={open} open={Boolean(open)}> 
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>features</MenuItem>
+            
+            <MenuItem onClick={handleClose}>Settings</MenuItem>
+            <MenuItem onClick={handleClose}>Help</MenuItem>
+
+            <MenuItem>
+            <GoogleLogout
+              clientId={clientId}
+              render={renderProps=>(<button onClick={renderProps.onClick} style={bstyle}>Sign Out</button>)}
+              buttonText="Sign Out"
+              onLogoutSuccess={onSignoutSuccess}
+              icon={false}
+            ></GoogleLogout>
+
+            </MenuItem>
+           
+          </Menu>
     </div>
   );
 }

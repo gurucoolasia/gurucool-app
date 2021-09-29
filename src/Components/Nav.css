@@ -12,3 +12,10 @@
     border-radius: .25rem;
     transition: none!important;
 }
+.avt{
+  margin-right: 30px; 
+  
+}
+.avt:hover{
+cursor: pointer; 
+}
