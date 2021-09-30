@@ -3,7 +3,7 @@ import { Carousel, Nav } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
-
+import { Link } from 'react-router-dom'
 function Home() {
   const style = {
     backgroundColor: "#3C58A7",
@@ -79,7 +79,7 @@ function Home() {
             </Nav>
             <Nav style={bsignin}>
               <Navbar.Brand>
-                <Nav.Link href="/login" style={{ color: "white" }}>
+                <Nav.Link href = "/login" style={{ color: "black" }}>
                   Sign in
                 </Nav.Link>
               </Navbar.Brand>

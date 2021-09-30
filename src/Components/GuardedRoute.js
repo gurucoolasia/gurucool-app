@@ -16,5 +16,5 @@ function GuardedRoute(props) {
     )
 }
 
-export default GuardedRoute
+export default GuardedRoute;
 export {authentication};

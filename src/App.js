@@ -1,25 +1,43 @@
 import React from "react";
 import "./App.css";
 import Login from "./Components/Login";
-import Home from "./Components/Home";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Landing from '../src/Components/Landing'
+import Landing from "./Components/Landing";
+import { BrowserRouter as Router, Route, Switch,Redirect } from "react-router-dom";
 import "./Components/Login.css";
 import GuardedRoute from "./Components/GuardedRoute";
+import Home from "./Components/Home";
+import { useState, useMemo } from "react";
+import { UserContext } from "./UserContext";
+
 
 function App() {
+
+  const [userDetails, setUserDetails] = useState(null);
+  const providerValue = useMemo(()=>({userDetails,setUserDetails}), [userDetails, setUserDetails]);
+
   return (
-    <Router>
-      <div>
+
+      
+        <Router>
+          <div>
         <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <Route path="/login" component={Login}></Route>
-          <GuardedRoute path="/landing" component={Landing}>
-            {/* <Nav /> */}
+          <Route exact path="/" component={Home}>
+            <Home/>
+          </Route>
+          <UserContext.Provider value = {providerValue} >
+          <Route path="/login" component={Login} >
+            <Login/>
+          </Route>
+          <GuardedRoute path="/home" component={Landing}>
+            <Landing />
           </GuardedRoute>
+       </UserContext.Provider>
+
         </Switch>
-      </div>
-    </Router>
+        </div>
+        </Router>
+      
+     
   );
 }
 

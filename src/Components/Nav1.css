@@ -12,3 +12,22 @@
     border-radius: .25rem;
     transition: none!important;
 }
+
+
+.avt{
+  margin-right: 30px; 
+  
+}
+.avt:hover{
+cursor: pointer; 
+}
+
+.MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
+  top: 58px!important;
+}
+
+@media only screen and (max-width: 993px){
+  .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded{
+    top: 158px!important;
+  }
+}

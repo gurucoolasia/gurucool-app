@@ -1,11 +1,11 @@
 import React from 'react'
-import Nav1 from './Nav'
-
+import Nav1 from './Nav1'
 function Landing() {
+
     return (
-        <div>
+        <>
             <Nav1/>
-        </div>
+        </>
     )
 }
 
